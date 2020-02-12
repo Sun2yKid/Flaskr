@@ -31,3 +31,8 @@ For Windows PowerShell, use $env: instead of export:
 
 ## run
 > flask run
+
+## testing
+> pytest -v
+> coverage run -m pytest
+> coverage html

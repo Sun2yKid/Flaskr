@@ -33,7 +33,7 @@ def init_db():
 @with_appcontext
 def init_db_command():
     init_db()
-    click.echo('Init the db')
+    click.echo('Initialized the db')
 
 
 def init_app(app):
