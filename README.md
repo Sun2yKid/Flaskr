@@ -53,7 +53,28 @@ For Windows PowerShell, use $env: instead of export:
 > pip install flaskr-1.0.0-py3-none-any.whl
 > export FLASK_APP=flaskr
 > flask init-db
+
+## Build
+[Deployment Options](https://flask.palletsprojects.com/en/1.1.x/deploying/)
+
+### waitress
 > pip install waitress
 > waitress-serve --call 'flaskr:create_app'
 
-[Deployment Options](https://flask.palletsprojects.com/en/1.1.x/deploying/)
+### gunicorn
+> pip install gunicorn
+> gunicorn -k gevent_wsgi -w 4 -b 127.0.0.1:4000 "flaskr:create_app()" [--access-logfile -]
+`--access-logfile -` 输出日志到当前目录(-)
+[gunicorn docs](https://docs.gunicorn.org/en/stable)
+
+### uwsgi
+> pip install uwsgi
+> uwsgi --http 127.0.0.1:5000 --module "flaskr:create_app()"
+
+## load testiing tool --- [locust](https://locust.io/)
+> locust # when 
+
+If the Locust file is located under a subdirectory and/or named different than locustfile.py, specify it using -f:
+> locust -f test.py
+
+[locust docs](https://docs.locust.io/en/latest/quickstart.html)
