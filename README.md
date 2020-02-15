@@ -35,7 +35,22 @@ For Windows PowerShell, use $env: instead of export:
 ## run
 > flask run
 
-## testing
+## Make the Project Installable
+create `setup.py` file to describes your project and the files that belong to it.
+
+Python needs another file named `MANIFEST.in` to tell what this other data is.
+
+Use pip to install your project in the virtual environment.
+
+> pip install -e .
+> pip list
+
+This tells pip to find setup.py in the current directory and install it in editable or development mode.
+
+## Testing
+use pytest and coverage to test and measure your code.
+> pip install pytest coverage
+
 > pytest -v
 > coverage run -m pytest
 > coverage html
