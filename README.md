@@ -59,9 +59,14 @@ use pytest and coverage to test and measure your code.
 > pip install wheel
 > python setup.py bdist_wheel
 
+You can find the file in dist/flaskr-1.0.0-py3-none-any.whl. The file name is the name of the project,
+the version, and some tags about the file can install.
+
 [packaging projects]https://packaging.python.org/tutorials/packaging-projects/
 
-## set new env
+Copy this file to another machine, set up a new virtualenv, then install the file with pip.
+
+## Set new env
 > python3 -m venv flaskr_env
 
 ## Install
@@ -69,7 +74,7 @@ use pytest and coverage to test and measure your code.
 > export FLASK_APP=flaskr
 > flask init-db
 
-## Build
+## Deploy
 [Deployment Options](https://flask.palletsprojects.com/en/1.1.x/deploying/)
 
 ### waitress
