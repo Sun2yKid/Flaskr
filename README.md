@@ -63,7 +63,7 @@ For Windows PowerShell, use $env: instead of export:
 
 ### gunicorn
 > pip install gunicorn
-> gunicorn -k gevent_wsgi -w 4 -b 127.0.0.1:4000 "flaskr:create_app()" [--access-logfile -]
+> gunicorn -k gevent -w 4 -b 127.0.0.1:4000 "flaskr:create_app()" [--access-logfile -]
 `--access-logfile -` 输出日志到当前目录(-)
 [gunicorn docs](https://docs.gunicorn.org/en/stable)
 
@@ -72,7 +72,7 @@ For Windows PowerShell, use $env: instead of export:
 > uwsgi --http 127.0.0.1:5000 --module "flaskr:create_app()"
 
 ## load testiing tool --- [locust](https://locust.io/)
-> locust # when 
+> locust
 
 If the Locust file is located under a subdirectory and/or named different than locustfile.py, specify it using -f:
 > locust -f test.py
